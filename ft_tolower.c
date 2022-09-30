@@ -6,13 +6,15 @@
 /*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 18:34:18 by esalim            #+#    #+#             */
-/*   Updated: 2022/09/29 18:48:11 by esalim           ###   ########.fr       */
+/*   Updated: 2022/09/30 12:57:10 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	return (c + 32);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
 /*
 int	main(void)

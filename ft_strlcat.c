@@ -6,7 +6,7 @@
 /*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:07:08 by esalim            #+#    #+#             */
-/*   Updated: 2022/09/29 18:08:07 by esalim           ###   ########.fr       */
+/*   Updated: 2022/09/30 12:34:29 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,11 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t n)
 
 	j = 0;
 	i = 0;
-	length = ft_strlen((char *)src);
-	length += ft_strlen((char *)dst);
+	length = ft_strlen((char *)src) + ft_strlen((char *)dst);
 	while (dst[j])
 		j++;
 	while (src[i] && j < n - 1)
-	{
-		dst[j] = src[i];
-		i++;
-		j++;
-	}
+		dst[j++] = src[i++];
 	dst[j] = 0;
 	return (length);
 }

@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 18:34:18 by esalim            #+#    #+#             */
-/*   Updated: 2022/09/30 16:37:36 by esalim           ###   ########.fr       */
+/*   Created: 2022/09/30 15:40:56 by esalim            #+#    #+#             */
+/*   Updated: 2022/09/30 16:02:06 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include <stdio.h>
+#include <string.h>
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (c <= 'a' && c >= 'z')
-		return (c - 32);
-	return (c);
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+	{
+//		if (haystack[i] == )
+		i++;
+	}
+
 }
-/*
-int	main(void)
-{
-	for (int i= 0; i < 9; i++)
-		printf("######	$ %c $ ----- > $ %c $	######\n", 'a' + i,ft_toupper('a'+i));
+int main () {
+   const char haystack[40] = "TutorialsPoint fgshd sghfjg";
+   const char needle[10] = "Point";
+   char *ret;
+
+   ret = strnstr(haystack, needle, 30);
+
+   printf("The substring is: %s\n", ret);
+
+   return(0);
 }
-*/

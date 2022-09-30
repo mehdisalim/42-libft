@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 18:34:18 by esalim            #+#    #+#             */
-/*   Updated: 2022/09/30 16:37:36 by esalim           ###   ########.fr       */
+/*   Created: 2022/09/30 16:38:08 by esalim            #+#    #+#             */
+/*   Updated: 2022/09/30 17:45:49 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "libft.h"
+
+char	*ft_strdup(const char *s1)
 {
-	if (c <= 'a' && c >= 'z')
-		return (c - 32);
-	return (c);
+	char	*dest;
+	size_t	len;
+
+	len = ft_strlen((char *)s1) + 1;
+	dest = (char *)malloc(len);
+	ft_strlcpy(dest, (char *)s1, len);
+	return (dest);
 }
-/*
-int	main(void)
+
+int main(void)
 {
-	for (int i= 0; i < 9; i++)
-		printf("######	$ %c $ ----- > $ %c $	######\n", 'a' + i,ft_toupper('a'+i));
+	char d[200] = "mehdi\tsadfl[;vvnmnewrcr4bcewnewdsgsfsaliam salan nehdgt";
+	printf("####	$%s$	####\n", ft_strdup(d));
+	printf("####	$%s$	####\n", strdup(d));
 }
-*/
