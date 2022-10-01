@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: esalim <esalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 16:33:55 by esalim            #+#    #+#             */
-/*   Updated: 2022/09/28 16:54:23 by esalim           ###   ########.fr       */
+/*   Updated: 2022/09/30 19:48:28 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -26,17 +26,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (src);
 }
-/*
-#include<stdio.h>
-
-int main(void)
-{
-	char str[50] = "GeeksForGeeks is for programming geeks.";
-    printf("\nBefore memset(): %s\n", str);
-  
-    // Fill 8 characters starting from str[13] with '.'
-    ft_memset(str + 13, '.', 8*sizeof(char));
-  
-    printf("After memset():  %s", str);
-}
-*/

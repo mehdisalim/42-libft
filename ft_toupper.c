@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: esalim <esalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 18:34:18 by esalim            #+#    #+#             */
-/*   Updated: 2022/09/30 16:37:36 by esalim           ###   ########.fr       */
+/*   Updated: 2022/09/30 19:55:02 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_toupper(int c)
 {
@@ -16,10 +18,3 @@ int	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
-/*
-int	main(void)
-{
-	for (int i= 0; i < 9; i++)
-		printf("######	$ %c $ ----- > $ %c $	######\n", 'a' + i,ft_toupper('a'+i));
-}
-*/

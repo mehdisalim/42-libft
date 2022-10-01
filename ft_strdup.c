@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: esalim <esalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 16:38:08 by esalim            #+#    #+#             */
-/*   Updated: 2022/09/30 17:45:49 by esalim           ###   ########.fr       */
+/*   Updated: 2022/09/30 19:41:03 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,4 @@ char	*ft_strdup(const char *s1)
 	dest = (char *)malloc(len);
 	ft_strlcpy(dest, (char *)s1, len);
 	return (dest);
-}
-
-int main(void)
-{
-	char d[200] = "mehdi\tsadfl[;vvnmnewrcr4bcewnewdsgsfsaliam salan nehdgt";
-	printf("####	$%s$	####\n", ft_strdup(d));
-	printf("####	$%s$	####\n", strdup(d));
 }

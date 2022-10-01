@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: esalim <esalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:07:08 by esalim            #+#    #+#             */
-/*   Updated: 2022/09/30 12:34:29 by esalim           ###   ########.fr       */
+/*   Updated: 2022/09/30 19:56:09 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<string.h>
-
-size_t	ft_strlen(char *str);
+#include "libft.h"
 
 size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t n)
 {
@@ -31,15 +28,3 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t n)
 	dst[j] = 0;
 	return (length);
 }
-/*
-int main()
-{
-	char c[16] = "testtesst",s[16] = "mehdi salim";
-	char a[16] = "testtesst",b[16] = "mehdi salim";
-	size_t i;
-	i = ft_strlcat(c, s, 10);
-	printf("#####	#%s#	#####\nlength is : %zu\n", c, i);
-	i = strlcat(a, b, 10);
-	printf("#####	#%s#	#####\nlength is : %zu", a, i);
-}
-*/
