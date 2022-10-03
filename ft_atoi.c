@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: esalim <esalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:16:59 by esalim            #+#    #+#             */
-/*   Updated: 2022/09/30 19:12:14 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/02 16:50:06 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	ft_atoi(const char *str)
 	i = 0;
 	result = 0;
 	sign = 1;
-	while (str[i] == 32 || str[i] == '\t')
+	while (str[i] == 32 || str[i] == '\t' || str[i] == '\r'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\n')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{

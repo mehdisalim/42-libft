@@ -6,7 +6,7 @@
 /*   By: esalim <esalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 20:09:50 by esalim            #+#    #+#             */
-/*   Updated: 2022/09/30 19:55:35 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/02 16:36:12 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*str;
-
-	i = -1;
-	str = (char *) s;
-	while (++i < n)
-		str[i] = 0;
+	ft_memset(s, 0, n);
 }

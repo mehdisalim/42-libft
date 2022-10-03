@@ -6,7 +6,7 @@
 /*   By: esalim <esalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 18:53:18 by esalim            #+#    #+#             */
-/*   Updated: 2022/09/30 19:49:16 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/02 17:35:53 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	while (*str)
+	int	i;
+	int	len;
+
+	i = 0;
+	len = ft_strlen(str);
+	while (i <= len)
 	{
-		if (*str == c)
-			return ((char *)str);
-		str++;
+		if (str[i] == c)
+			return ((char *)str + i);
+		i++;
 	}
 	return (0);
 }

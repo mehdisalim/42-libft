@@ -3,35 +3,56 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+         #
+#    By: esalim <esalim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/28 15:57:43 by esalim            #+#    #+#              #
-#    Updated: 2022/10/01 15:13:27 by esalim           ###   ########.fr        #
+#    Created: 2022/10/01 18:43:45 by esalim            #+#    #+#              #
+#    Updated: 2022/10/03 15:34:17 by esalim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+CFILES= ft_isalnum.c \
+		ft_isalpha.c \
+		ft_isascii.c \
+		ft_isdigit.c \
+		ft_isprint.c \
+		ft_memcpy.c \
+		ft_memset.c \
+		ft_strchr.c \
+		ft_strrchr.c \
+		ft_tolower.c \
+		ft_toupper.c \
+		ft_strncmp.c \
+		ft_memchr.c \
+		ft_memcmp.c \
+		ft_strnstr.c \
+		ft_strlen.c \
+		ft_bzero.c \
+		ft_strdup.c \
+		ft_atoi.c \
+		ft_calloc.c \
+		ft_strlcpy.c \
+		ft_strlcat.c \
+		ft_memmove.c 
 
-BANIRY	= libft.a
-CC		= gcc
-AR		= ar rcs
-INCDIRS = -I.
-OPT		= -std=c99
-CFLAGS	= -Wall -Wextra -Werror $(INCDIRS) $(OPT)
+OBJS = $(CFILES:.c=.o)
 
-CFILES	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_memset.c
-HFILES	= libft.h
-OBJECTS	= $(CFILES:.c=.o)	
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -std=c99 
+NAME = libft.a
 
-all: $(BANIRY)
-	
+all: $(NAME)
 
-$(BANIRY): $(OBJECTS)
-	$(AR) $@ $^
+$(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
 %.o:%.c
-	$(CC) $(CFLAGS) -c -o $@ $^
+	$(CC) -c $(CFLAGS) $^
 
 clean:
-	rm -rf $(OBJECTS)
-fclean:
-	rm -rf $(BANIRY) $(OBJECTS)
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re:fclean $(NAME)
+
