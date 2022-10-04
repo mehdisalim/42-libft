@@ -6,18 +6,23 @@
 /*   By: esalim <esalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 15:18:23 by esalim            #+#    #+#             */
-/*   Updated: 2022/10/03 13:49:49 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/04 14:48:53 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t len)
+void	*ft_memcpy(void *dest, const void *src, size_t len)
 {
 	size_t	i;
 
-	i = -1;
-	while (++i < len)
+	i = 0;
+	if (!len || dest == src)
+		return ((char *)dest);
+	while (len--)
+	{
 		((char *)dest)[i] = ((char *)src)[i];
+		i++;
+	}
 	return (dest);
 }

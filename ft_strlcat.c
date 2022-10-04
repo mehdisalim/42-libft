@@ -6,7 +6,7 @@
 /*   By: esalim <esalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:07:08 by esalim            #+#    #+#             */
-/*   Updated: 2022/10/02 18:02:33 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/04 15:01:39 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t n)
 	i = 0;
 	srclen = ft_strlen((char *)src);
 	destlen = ft_strlen((char *)dst);
-	if (destlen >= n)
+	if (destlen >= n || !n)
 		return (n + srclen);
 	while (dst[j])
 		j++;
-	while (src[i] && j < n - 1)
+	while (src[i] && j + 1 < n)
 		dst[j++] = src[i++];
 	dst[j] = 0;
 	return (srclen + destlen);

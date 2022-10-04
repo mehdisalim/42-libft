@@ -6,7 +6,7 @@
 /*   By: esalim <esalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 16:33:55 by esalim            #+#    #+#             */
-/*   Updated: 2022/09/30 19:48:28 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/03 17:39:02 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	i = 0;
 	src = (char *)b;
-	while (src[i] != 0 && i < len)
-	{
-		src[i] = c;
-		i++;
-	}
+	while (i < len)
+		src[i++] = c;
 	return (src);
 }
