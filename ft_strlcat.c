@@ -6,13 +6,13 @@
 /*   By: esalim <esalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:07:08 by esalim            #+#    #+#             */
-/*   Updated: 2022/10/04 15:01:39 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/04 16:24:56 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t n)
 {
 	size_t	j;
 	size_t	i;

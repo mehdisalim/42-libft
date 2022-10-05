@@ -6,7 +6,7 @@
 #    By: esalim <esalim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 18:43:45 by esalim            #+#    #+#              #
-#    Updated: 2022/10/03 15:34:17 by esalim           ###   ########.fr        #
+#    Updated: 2022/10/04 19:41:25 by esalim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,10 @@ CFILES= ft_isalnum.c \
 		ft_calloc.c \
 		ft_strlcpy.c \
 		ft_strlcat.c \
-		ft_memmove.c 
+		ft_memmove.c \
+	   	ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c 
 
 OBJS = $(CFILES:.c=.o)
 
