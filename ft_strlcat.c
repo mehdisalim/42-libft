@@ -6,7 +6,7 @@
 /*   By: esalim <esalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:07:08 by esalim            #+#    #+#             */
-/*   Updated: 2022/10/04 16:24:56 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/05 13:43:12 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 	j = 0;
 	i = 0;
 	srclen = ft_strlen((char *)src);
+	if ((dst || src) && !n)
+		return (srclen);
 	destlen = ft_strlen((char *)dst);
 	if (destlen >= n || !n)
 		return (n + srclen);

@@ -3,11 +3,12 @@
 
 int main()
 {
-    char src[] = "";
-    char src2[] = "";
+    char src2[] = " meh di sa lim sfgh ";
  
-    char* dest = ft_strtrim(src, src2);
-    printf("%s#\n", dest);
- 
+    char** dest = ft_split(src2, ' ');
+	for(int i = 0; i < 5; i++)
+	{
+		printf("%s", dest[i]);
+	}
     return 0;
 }
