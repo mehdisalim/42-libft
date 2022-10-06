@@ -1,14 +1,18 @@
 #include <stdio.h>
 #include "libft.h"
 
-int main()
+int                main(void)
 {
-    char src2[] = " meh di sa lim sfgh ";
- 
-    char** dest = ft_split(src2, ' ');
-	for(int i = 0; i < 5; i++)
-	{
-		printf("%s", dest[i]);
-	}
-    return 0;
+    char    **tab;
+    unsigned int    i;
+
+    i = 0;
+    tab = ft_split("\0aaa\0\0bbbb\0", '\0');
+    if (!tab[0])
+        printf("ok\n");
+    while (tab[i] != NULL)
+    {
+        printf("%s#\n", tab[i]);
+        i++;
+    }
 }

@@ -6,7 +6,7 @@
 /*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:28:49 by esalim            #+#    #+#             */
-/*   Updated: 2022/10/05 16:45:12 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/06 15:45:27 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	**ft_split(char const *s, char c)
 {
 	char	**dest;
 	char	*a;
-	char	*b;
 	int		nsplit;
 	size_t	slen;
 
@@ -25,22 +24,26 @@ char	**ft_split(char const *s, char c)
 	slen = ft_strlen(s);
 	s = ft_strtrim(s, &c);
 	a = (char *)s;
-	nsplit = 0;
+	nsplit = 1;
 	while (*a && (a = ft_strchr(a, c)))
 	{
 		a++;
 		nsplit++;
 	}
 
-	dest = (char **)malloc(nsplit);
+	dest = (char **)malloc(sizeof(char *) * (nsplit + 1));
 	if (!dest)
 		return (0);
-	b = (char *)s;
-	while (nsplit--)
+	char *splited;
+	int	p;
+
+	p = 0;
+	while ((splited = ft_strchr(s, c)))
 	{
-		*dest = ft_substr(b,0 ,ft_strchr(b, c) - b);
-		b = ft_strchr(b, c);
-		b++;
+		dest[p++] = ft_substr(s,0 ,splited - s);
+		s = ft_strchr(s, c);
+		s++;
 	}
+	dest[p] = 0;
 	return (dest);
 }
