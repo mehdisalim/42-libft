@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 17:07:06 by esalim            #+#    #+#             */
-/*   Updated: 2022/10/07 13:11:16 by esalim           ###   ########.fr       */
+/*   Created: 2022/10/06 22:42:47 by esalim            #+#    #+#             */
+/*   Updated: 2022/10/07 17:17:39 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	size_t	i;
+	char	c;
 
-	if (!s1 || !set)
-		return (0);
-	while (*s1 && ft_strchr(set, *s1))
-		s1++;
-	i = ft_strlen(s1);
-	while (i && ft_strchr(set, s1[i]))
-		i--;
-	return (ft_substr(s1, 0, i + 1));
+	if (nb <= -2147483648)
+	{
+		write(fd, "-", 1);
+		write(fd, "2", 1);
+		ft_putnbr_fd(147483648, fd);
+	}
+	else if (nb < 0)
+	{
+		write(fd, "-", 1);
+		ft_putnbr_fd(nb * (-1), fd);
+	}
+	else if (nb >= 0 && nb <= 9)
+	{
+		c = nb + 48;
+		write(fd, &c, 1);
+	}
+	else
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
+	}	
 }

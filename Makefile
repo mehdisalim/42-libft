@@ -6,7 +6,7 @@
 #    By: esalim <esalim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 18:43:45 by esalim            #+#    #+#              #
-#    Updated: 2022/10/06 18:58:45 by esalim           ###   ########.fr        #
+#    Updated: 2022/10/07 12:58:39 by esalim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,9 +38,12 @@ CFILES= ft_isalnum.c \
 		ft_strtrim.c \
 	   	ft_split.c	\
 		ft_itoa.c \
+		ft_strmapi.c \
+		ft_striteri.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
-		ft_putendl_fd.c
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c
 
 OBJS = $(CFILES:.c=.o)
 

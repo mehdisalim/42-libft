@@ -6,52 +6,50 @@
 /*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:38:59 by esalim            #+#    #+#             */
-/*   Updated: 2022/10/06 19:45:43 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/06 22:30:26 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	nbrlength(int nbr, int *size)
+int	nbrlength(int nbr)
 {
 	int	length;
 
-	length = 1;
+	length = 0;
+	if (nbr <= 0)
+		length++;
 	while (nbr)
 	{
 		nbr = nbr / 10;
-		*size = *size + 1;
-		length *= 10;
+		length++;
 	}
-	return (length / 10);
+	return (length);
 }
 
-char	*ft_itoa(int	nbr)
+char	*ft_itoa(int n)
 {
-	char	*dest;
-	int		size;
-	int		len;
-	int		sign;
+	char		*dest;
+	int			len;
+	long int	nbr;
 
-	sign = 1;
-	size = 0;
+	nbr = n;
+	len = nbrlength(nbr);
+	dest = malloc(len + 1);
+	if (!dest)
+		return (0);
 	if (nbr < 0)
 	{
-		sign *= -1;
+		dest[0] = '-';
 		nbr *= -1;
 	}
-	len = nbrlength(nbr, &size);
-	printf("%d  -----  %d#\n", len, size);
-	dest = malloc(size + 1);
-	while (size--)
+	dest[len] = 0;
+	if (nbr == 0)
+		dest[0] = '0';
+	while (nbr)
 	{
-		*dest = (nbr / len) + '0';
-		printf("%c#\n", *dest);
-		nbr %= len;
-		len /= 10;
-		dest++;
+		dest[--len] = (nbr % 10) + '0';
+		nbr /= 10;
 	}
-	*dest = 0;
 	return (dest);
 }
