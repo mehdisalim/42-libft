@@ -6,11 +6,11 @@
 #    By: esalim <esalim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 18:43:45 by esalim            #+#    #+#              #
-#    Updated: 2022/10/07 12:58:39 by esalim           ###   ########.fr        #
+#    Updated: 2022/10/08 13:29:15 by esalim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFILES= ft_isalnum.c \
+CFILES	= ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
 		ft_isdigit.c \
@@ -45,22 +45,33 @@ CFILES= ft_isalnum.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
-OBJS = $(CFILES:.c=.o)
+BONUSFILES = ft_lstnew.c \
+			 ft_lstadd_front.c \
+			 ft_lstsize.c \
+			 ft_lstlast.c \
+			 ft_lstadd_back.c
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -std=c99 
-NAME = libft.a
+OBJS	= $(CFILES:.c=.o)
 
-all: $(NAME)
+BONUSOBJS = $(BONUSFILES:.c=.o)
+
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror -std=c99 
+NAME	= libft.a
+
+all: 	$(NAME)
 
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	ar -rcs $@ $^
+
+bonus:	$(BONUSOBJS)
+	ar -rcs $(NAME) $^
 
 %.o:%.c
 	$(CC) -c $(CFLAGS) $^
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUSOBJS)
 
 fclean: clean
 	rm -f $(NAME)

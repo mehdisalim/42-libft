@@ -3,13 +3,17 @@
 
 int                main(void)
 {
-	char *s = "split  ||this|for|me|||||!|";
-    char **d = ft_split(s, '|');
-    while (*d)
+	char *c = "mehdi salim";
+	t_list	*list = ft_lstnew(c);
+	t_list	*node;
+	node->content = c;
+	ft_lstadd_front(&list,node);
+	while (list->next)
 	{
-        printf("%s#\n", *d);
-		d++;
-    } 
+    	printf("%s\n", list->content);
+		list = list->next;
+	}
+
 }
 
 
