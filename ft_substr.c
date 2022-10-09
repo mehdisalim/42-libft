@@ -6,7 +6,7 @@
 /*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 15:19:21 by esalim            #+#    #+#             */
-/*   Updated: 2022/10/06 22:52:01 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/09 12:03:33 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (0);
-	d = (char *)malloc(len + 1);
+	d = (char *)ft_calloc(len + 1, sizeof(char));
 	if (!d)
 		return (0);
 	if (start < ft_strlen(s))

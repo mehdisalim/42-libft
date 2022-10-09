@@ -6,7 +6,7 @@
 #    By: esalim <esalim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 18:43:45 by esalim            #+#    #+#              #
-#    Updated: 2022/10/08 13:29:15 by esalim           ###   ########.fr        #
+#    Updated: 2022/10/09 00:07:32 by esalim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ BONUSFILES = ft_lstnew.c \
 			 ft_lstadd_front.c \
 			 ft_lstsize.c \
 			 ft_lstlast.c \
-			 ft_lstadd_back.c
+			 ft_lstadd_back.c \
+			 ft_lstdelone.c
 
 OBJS	= $(CFILES:.c=.o)
 

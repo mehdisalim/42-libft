@@ -6,7 +6,7 @@
 /*   By: esalim <esalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 15:40:56 by esalim            #+#    #+#             */
-/*   Updated: 2022/10/05 13:44:55 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/09 14:57:41 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	if ((needle || haystack) && !len)
 		return ((char *)haystack);
 	nlen = ft_strlen(needle);
-	if (!*haystack)
+	if (!*haystack || !haystack)
 		return (0);
 	while (i + nlen <= len)
 	{
