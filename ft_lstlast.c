@@ -6,15 +6,14 @@
 /*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 13:15:29 by esalim            #+#    #+#             */
-/*   Updated: 2022/10/09 15:09:01 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/10 20:19:48 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-
 	if (!lst)
 		return (0);
 	while (lst->next)

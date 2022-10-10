@@ -6,13 +6,13 @@
 /*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 17:07:35 by esalim            #+#    #+#             */
-/*   Updated: 2022/10/10 18:30:49 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/10 20:23:00 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
 	t_list	*tmp;
@@ -27,7 +27,7 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			return (0);
 		}
 		ft_lstadd_back(&new, tmp);
-		lst = lst->next; 
+		lst = lst->next;
 	}
 	return (new);
 }

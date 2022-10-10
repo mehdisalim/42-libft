@@ -6,7 +6,7 @@
 /*   By: esalim <esalim@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 00:08:32 by esalim            #+#    #+#             */
-/*   Updated: 2022/10/10 14:31:09 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/10 20:14:39 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	if (!lst || !del)
 		return ;
 	del(lst->content);
-	free(lst);	
+	free(lst);
 }
