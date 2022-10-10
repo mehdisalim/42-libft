@@ -6,7 +6,7 @@
 /*   By: esalim <esalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:16:59 by esalim            #+#    #+#             */
-/*   Updated: 2022/10/04 12:49:12 by esalim           ###   ########.fr       */
+/*   Updated: 2022/10/10 14:59:00 by esalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,6 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] && ft_isdigit(str[i]))
 	{
-		if ((result * sign) > 2147483647)
-			return (-1);
-		else if ((result * sign) < -2147483648)
-			return (0);
 		result = (result * 10) + str[i] - 48;
 		i++;
 	}

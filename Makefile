@@ -6,7 +6,7 @@
 #    By: esalim <esalim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 18:43:45 by esalim            #+#    #+#              #
-#    Updated: 2022/10/09 00:07:32 by esalim           ###   ########.fr        #
+#    Updated: 2022/10/10 18:02:56 by esalim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,14 +50,17 @@ BONUSFILES = ft_lstnew.c \
 			 ft_lstsize.c \
 			 ft_lstlast.c \
 			 ft_lstadd_back.c \
-			 ft_lstdelone.c
+			 ft_lstdelone.c \
+			 ft_lstclear.c \
+			 ft_lstiter.c \
+			 ft_lstmap.c
 
 OBJS	= $(CFILES:.c=.o)
 
 BONUSOBJS = $(BONUSFILES:.c=.o)
 
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -std=c99 
+CFLAGS	= -Wall -Wextra -Werror 
 NAME	= libft.a
 
 all: 	$(NAME)
