@@ -12,11 +12,8 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3
-            - name: make
+            - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
             - run: make
-            - name: make re
             - run: make re
-            - name: run
             - run: make re && gcc man_main.c && ./a.out
-            - name: make fclean
             - run: make fclean
