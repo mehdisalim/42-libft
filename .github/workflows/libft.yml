@@ -13,10 +13,10 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - name: make
-                run: make
+            - run: make
             - name: make re
-                run: make re
+            - run: make re
             - name: run
-                run: make re && gcc man_main.c && ./a.out
+            - run: make re && gcc man_main.c && ./a.out
             - name: make fclean
-                run: make fclean
+            - run: make fclean
