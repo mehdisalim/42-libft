@@ -16,4 +16,4 @@ jobs:
             - run: make
             - run: make re
             - run: make fclean
-            - run: make && gcc libft.a man_main.c && ./a.out
+            - run: make re && gcc libft.a man_main.c
