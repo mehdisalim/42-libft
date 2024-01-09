@@ -1,0 +1,22 @@
+name: LIBFT CI
+
+on:
+    push:
+        branch: [ "main" ]
+    pull_request:
+        branch: [ "main" ]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v3
+            - name: make
+                run: make
+            - name: make re
+                run: make re
+            - name: run
+                run: make re && gcc man_main.c && ./a.out
+            - name: make fclean
+                run: make fclean
